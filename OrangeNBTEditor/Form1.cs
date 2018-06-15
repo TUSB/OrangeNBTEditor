@@ -23,7 +23,7 @@ namespace SpringEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var file = @"C:\Users\SystemLink\Downloads\Mistgale ver1.01\Mistgale ver1.01\Mistgale\level.dat";
+            var file = @"C:\Users\owner\AppData\Roaming\.minecraft\saves\TFL-StoryMap\level.dat";
             var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(file);
             var node = new TreeNode();
             NBTReader.AddTag(tag, node);
@@ -32,6 +32,19 @@ namespace SpringEditor
             treeView1.Sort();
         }
 
-        
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
