@@ -19,8 +19,8 @@ namespace SpringEditor
         public Form1()
         {
             InitializeComponent();
-            string[] path = System.Environment.GetCommandLineArgs();
-            if (FileTypeChecker(path[0]) == true)
+            string[] path = Environment.GetCommandLineArgs();
+            if (FileTypeChecker(path[0]))
             {
                 DataImport(path[0]);
             }
@@ -41,16 +41,16 @@ namespace SpringEditor
             var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
             var node = new TreeNode();
             NBTReader.AddTag(tag, node);
-            node.Nodes[0].Text = System.IO.Path.GetFileName(filePath);
+            node.Nodes[0].Text = System.IO.Path.GetFileName(filePath) ?? throw new InvalidOperationException();
             treeView1.Nodes.Add(node.Nodes[0]);
             treeView1.Sort();
         }
 
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
-            string[] PathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            string path = PathArray[0];
-            if (FileTypeChecker(path) == true)
+            string[] pathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            string path = pathArray[0];
+            if (FileTypeChecker(path))
             {
                 DataImport(path);
             }
@@ -62,7 +62,7 @@ namespace SpringEditor
 
         private void treeView1_DragEnter(object sender, DragEventArgs e) //DragAndDrop files
         {
-            if ((e.Data.GetDataPresent(DataFormats.FileDrop)))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.All;
             }

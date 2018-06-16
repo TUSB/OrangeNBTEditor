@@ -25,7 +25,7 @@ namespace SpringEditor.NBT
                             addnode = AddTag(child, addnode);
 
                         }
-                    value = compund.Count.ToString() + " entries";
+                    value = compund.Count + " entries";
                     break;
                 case TagType.List:
                         var list = (TagList)tag;
@@ -33,7 +33,7 @@ namespace SpringEditor.NBT
                         {
                             addnode = AddTag(child, addnode);
                         }
-                    value = list.Count.ToString() + " entries";
+                    value = list.Count + " entries";
                     break;
                 case TagType.Byte:
                     value = ((TagByte)tag).Value.ToString();
