@@ -19,7 +19,7 @@ namespace SpringEditor
         public Form1()
         {
             InitializeComponent();
-            string[] path = Environment.GetCommandLineArgs(); //なんかできない
+            /*string[] path = Environment.GetCommandLineArgs(); //なんかできない
             if (FileTypeChecker(path[0]))
             {
                 DataImport(path[0]);
@@ -27,7 +27,7 @@ namespace SpringEditor
             else
             {
                 MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,26 +38,28 @@ namespace SpringEditor
         public void DataImport(string filePath)
         {
             treeView1.Nodes.Clear();
-            var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
-            var node = new TreeNode();
-            NBTReader.AddTag(tag, node);
-            node.Nodes[0].Text = System.IO.Path.GetFileName(filePath) ?? throw new InvalidOperationException();
-            treeView1.Nodes.Add(node.Nodes[0]);
-            treeView1.Sort();
+            try
+            {
+                var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
+                var node = new TreeNode();
+                NBTReader.AddTag(tag, node);
+                node.Nodes[0].Text = System.IO.Path.GetFileName(filePath) ?? throw new InvalidOperationException();
+                treeView1.Nodes.Add(node.Nodes[0]);
+                treeView1.Sort();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(e);
+            }
+
         }
 
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
             string[] pathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             string path = pathArray[0];
-            if (FileTypeChecker(path))
-            {
-                DataImport(path);
-            }
-            else
-            {
-                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DataImport(path);
         }
 
         private void treeView1_DragEnter(object sender, DragEventArgs e) //DragAndDrop files
@@ -74,9 +76,9 @@ namespace SpringEditor
 
         
 
-        public bool FileTypeChecker(string path) //読み込まれたファイルの拡張子確認
+        public bool FileTypeChecker(string path) //読み込まれたファイルの拡張子確認 (多分使わない関数だけど一応残しておく)
         {
-            string[] allowArray = { "dat" }; //許可拡張子列挙
+            string[] allowArray = { "dat", "nbt" }; //許可拡張子列挙
             foreach (string extend in allowArray)
             {
                 int dot = extend.Length;
@@ -102,7 +104,6 @@ namespace SpringEditor
         {
             OpenFileDialog fdia = new OpenFileDialog();
             fdia.InitialDirectory = @"C:\Users\owner\AppData\Roaming\.minecraft\saves";
-            fdia.Filter = "DATファイル(*.dat)|*.dat";
             fdia.Title = "データを選択してください";
             if (fdia.ShowDialog() == DialogResult.OK)
             {
