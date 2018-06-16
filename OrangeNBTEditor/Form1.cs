@@ -19,7 +19,7 @@ namespace SpringEditor
         public Form1()
         {
             InitializeComponent();
-            string[] path = Environment.GetCommandLineArgs();
+            string[] path = Environment.GetCommandLineArgs(); //なんかできない
             if (FileTypeChecker(path[0]))
             {
                 DataImport(path[0]);
