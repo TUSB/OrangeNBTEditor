@@ -23,13 +23,60 @@ namespace SpringEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var file = @"C:\Users\owner\AppData\Roaming\.minecraft\saves\TFL-StoryMap\level.dat";
-            var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(file);
+
+        }
+
+        public void DataImport(string filePath)
+        {
+            treeView1.Nodes.Clear();
+            var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
             var node = new TreeNode();
             NBTReader.AddTag(tag, node);
-            node.Nodes[0].Text = System.IO.Path.GetFileName(file);
+            node.Nodes[0].Text = System.IO.Path.GetFileName(filePath);
             treeView1.Nodes.Add(node.Nodes[0]);
             treeView1.Sort();
+        }
+
+        private void treeView1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] PathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            string path = PathArray[0];
+            if (FileTypeChecker(path) == true)
+            {
+                DataImport(path);
+            }
+            else
+            {
+                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void treeView1_DragEnter(object sender, DragEventArgs e) //DragAndDrop files
+        {
+            if ((e.Data.GetDataPresent(DataFormats.FileDrop)))
+            {
+                e.Effect = DragDropEffects.All;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        
+
+        public bool FileTypeChecker(string path) //読み込まれたファイルの拡張子確認
+        {
+            string[] allowArray = { "dat" }; //許可拡張子列挙
+            foreach (string extend in allowArray)
+            {
+                int dot = extend.Length;
+                if (extend == path.Substring(path.Length - dot, dot))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -46,5 +93,6 @@ namespace SpringEditor
         {
 
         }
+
     }
 }
