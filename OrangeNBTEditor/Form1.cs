@@ -19,6 +19,15 @@ namespace SpringEditor
         public Form1()
         {
             InitializeComponent();
+            string[] path = System.Environment.GetCommandLineArgs();
+            if (FileTypeChecker(path[0]) == true)
+            {
+                DataImport(path[0]);
+            }
+            else
+            {
+                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -91,7 +100,14 @@ namespace SpringEditor
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog fdia = new OpenFileDialog();
+            fdia.InitialDirectory = @"C:\Users\owner\AppData\Roaming\.minecraft\saves";
+            fdia.Filter = "DATファイル(*.dat)|*.dat";
+            fdia.Title = "データを選択してください";
+            if (fdia.ShowDialog() == DialogResult.OK)
+            {
+                DataImport(fdia.FileName);
+            }
         }
 
     }
