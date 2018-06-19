@@ -253,13 +253,13 @@ paket-files/
 .idea/
 *.sln.iml
 
-# Visual Studio
-.vs/
-
 # CodeRush
 .cr/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
 *.cache
+
+.obj/

@@ -1,10 +1,6 @@
-﻿using OrangeNBT.NBT;
-using System.Windows.Forms;
-
-namespace SpringEditor.NBT
+﻿namespace SpringEditor.NBT
 {
-    class NBTReader
+    internal class NBTReader
     {
-        
     }
 }
