@@ -90,9 +90,10 @@ namespace SpringEditor
             return false;
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) //ノードをクリック
         {
 
+            //ToolStripManagement();
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -109,6 +110,69 @@ namespace SpringEditor
             {
                 DataImport(fdia.FileName);
             }
+        }
+
+        public void ToolStripManagement(TagBase tag) //クリックされたノードの種類を検知しToolStripを操作
+        {
+            switch (tag.TagType)
+            {
+                case TagType.Compound:
+                    ToolStripEnabled(true, true, false, true, false, true, true, true);
+                    break;
+                case TagType.List:
+                    ToolStripEnabled(true, true, false, true, false, true, true, true);
+                    break;
+                case TagType.Byte:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.ByteArray:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.Double:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.Float:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.Int:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.IntArray:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.Long:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.LongArray:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.Short:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+                case TagType.String:
+                    ToolStripEnabled(true, true, false, true, true, true, false, false);
+                    break;
+            }
+        }
+
+        public void ToolStripEnabled(bool cut, bool copy, bool paste, bool rename, bool editValue, bool delete, bool tags, bool findNext) //ToolStripのクリック可否を操作
+        {
+            CutSB.Enabled = cut ? true : false;  // if (cut) -> <TRUE時の処理> : <FALSE時の処理>  If文を省略
+            CopySB.Enabled = copy ? true : false;
+            PasteSB.Enabled = paste ? true : false;
+            AddByteTagSB.Enabled = editValue ? true : false;
+            AddStringTagSB.Enabled = editValue ? true : false;
+            AddIntTagSB.Enabled = editValue ? true : false;
+            AddLongTagSB.Enabled = editValue ? true : false;
+            AddFloatTagSB.Enabled = editValue ? true : false;
+            AddDoubleTagSB.Enabled = editValue ? true : false;
+            AddByteArraySB.Enabled = editValue ? true : false;
+            AddIntArraySB.Enabled = editValue ? true : false;
+            AddLongArraySB.Enabled = editValue ? true : false;
+            AddStringArraySB.Enabled = editValue ? true : false;
+            AddListTagSB.Enabled = editValue ? true : false;
+            AddCompoundTagSB.Enabled = editValue ? true : false;
+            FindNextSB.Enabled = findNext ? true : false;
         }
 
     }
