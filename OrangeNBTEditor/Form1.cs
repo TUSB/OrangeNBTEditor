@@ -30,31 +30,21 @@ namespace SpringEditor
             }*/
         }
 
+        /// <summary>
+        /// フォームのロードイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void DataImport(string filePath)
-        {
-            treeView1.Nodes.Clear();
-            try
-            {
-                var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
-                var node = new TreeNode();
-                NBTReader.AddTag(tag, node);
-                node.Nodes[0].Text = System.IO.Path.GetFileName(filePath) ?? throw new InvalidOperationException();
-                treeView1.Nodes.Add(node.Nodes[0]);
-                treeView1.Sort();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(e);
-            }
-
-        }
-
+        /// <summary>
+        /// TreeViewドラッグ&ドロップイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
             string[] pathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
@@ -62,6 +52,11 @@ namespace SpringEditor
             DataImport(path);
         }
 
+        /// <summary>
+        /// TreeViewドラッグエンターイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeView1_DragEnter(object sender, DragEventArgs e) //DragAndDrop files
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -74,8 +69,57 @@ namespace SpringEditor
             }
         }
 
+        /// <summary>
+        /// ノード選択イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+            //ToolStripManagement();
+        }
+
+        /// <summary>
+        /// 開くボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdia = new OpenFileDialog();
+            fdia.InitialDirectory = @"C:\Users\owner\AppData\Roaming\.minecraft\saves";
+            fdia.Title = "データを選択してください";
+            if (fdia.ShowDialog() == DialogResult.OK)
+            {
+                DataImport(fdia.FileName);
+            }
+        }
+
+        public void DataImport(string filePath)
+        {
+            treeView1.Nodes.Clear();
+            try
+            {
+                var tag = OrangeNBT.NBT.IO.NBTFile.FromFile(filePath);
+                var node = new TreeNode();
+                AddTag(tag, node);
+                node.Nodes[0].Text = System.IO.Path.GetFileName(filePath) ?? throw new InvalidOperationException();
+                treeView1.Nodes.Add(node.Nodes[0]);
+                treeView1.Sort();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("拡張子がサポートされていないかファイルではありません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(e);
+            }
+
+        }
+
         
 
+        
+        
         public bool FileTypeChecker(string path) //読み込まれたファイルの拡張子確認 (多分使わない関数だけど一応残しておく)
         {
             string[] allowArray = { "dat", "nbt" }; //許可拡張子列挙
@@ -90,27 +134,9 @@ namespace SpringEditor
             return false;
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) //ノードをクリック
-        {
+        
 
-            //ToolStripManagement();
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fdia = new OpenFileDialog();
-            fdia.InitialDirectory = @"C:\Users\owner\AppData\Roaming\.minecraft\saves";
-            fdia.Title = "データを選択してください";
-            if (fdia.ShowDialog() == DialogResult.OK)
-            {
-                DataImport(fdia.FileName);
-            }
-        }
+        
 
         public void ToolStripManagement(TagBase tag) //クリックされたノードの種類を検知しToolStripを操作
         {
@@ -175,5 +201,85 @@ namespace SpringEditor
             FindNextSB.Enabled = findNext ? true : false;
         }
 
+
+        /// <summary>
+        /// タグを再帰的に読み込んでTreeViewへ追加する
+        /// </summary>
+        /// <param name="tag">TagCompound</param>
+        /// <param name="node">TreeNode</param>
+        /// <returns></returns>
+        public static TreeNode AddTag(TagBase tag, TreeNode node)
+        {
+            var addnode = new TreeNode();
+            string value = "";
+
+            switch (tag.TagType)
+            {
+                case TagType.Compound:
+                    var compund = (TagCompound)tag;
+                    foreach (TagBase child in compund)
+                    {
+                        addnode = AddTag(child, addnode);
+                    }
+                    value = compund.Count + " entries";
+                    addnode.ImageIndex = 10;
+                    break;
+                case TagType.List:
+                    var list = (TagList)tag;
+                    foreach (TagBase child in list)
+                    {
+                        addnode = AddTag(child, addnode);
+                    }
+                    value = list.Count + " entries";
+                    addnode.ImageIndex = 9;
+                    break;
+                case TagType.Byte:
+                    value = ((TagByte)tag).Value.ToString();
+                    addnode.ImageIndex = 0;
+                    break;
+                case TagType.ByteArray:
+                    value = ((TagByteArray)tag).Value.Length + "bytes";
+                    addnode.ImageIndex = 6;
+                    break;
+                case TagType.Double:
+                    value = ((TagDouble)tag).Value.ToString();
+                    addnode.ImageIndex = 5;
+                    break;
+                case TagType.Float:
+                    value = ((TagFloat)tag).Value.ToString();
+                    addnode.ImageIndex = 4;
+                    break;
+                case TagType.Int:
+                    value = ((TagInt)tag).Value.ToString();
+                    addnode.ImageIndex = 2;
+                    break;
+                case TagType.IntArray:
+                    value = ((TagIntArray)tag).Value.Length + "integers";
+                    addnode.ImageIndex = 7;
+                    break;
+                case TagType.Long:
+                    value = ((TagLong)tag).Value.ToString();
+                    addnode.ImageIndex = 3;
+                    break;
+                case TagType.LongArray:
+                    break;
+                case TagType.Short:
+                    value = ((TagShort)tag).Value.ToString();
+                    addnode.ImageIndex = 1;
+                    break;
+                case TagType.String:
+                    value = ((TagString)tag).Value.ToString();
+                    addnode.ImageIndex = 8;
+                    break;
+            }
+
+            if (!string.IsNullOrEmpty(tag.Name))
+            {
+                addnode.Text = tag.Name + ": " + value;
+            }
+
+            node.Nodes.Add(addnode);
+            return node;
+        }
     }
 }
