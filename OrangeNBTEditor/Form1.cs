@@ -38,8 +38,8 @@ namespace SpringEditor
         /// <param name="e"></param>
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
-            var pathArray = (string[]) e.Data.GetData(DataFormats.FileDrop, false);
-            var path = pathArray[0];
+            string[] pathArray = (string[]) e.Data.GetData(DataFormats.FileDrop, false);
+            string path = pathArray[0];
             DataImport(path);
         }
 
@@ -73,7 +73,7 @@ namespace SpringEditor
         /// <param name="e"></param>
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            var fdia = new OpenFileDialog();
+            OpenFileDialog  fdia = new OpenFileDialog();
             fdia.InitialDirectory = @"C:\Users\owner\AppData\Roaming\.minecraft\saves";
             fdia.Title = "データを選択してください";
             if (fdia.ShowDialog() == DialogResult.OK) DataImport(fdia.FileName);
@@ -102,7 +102,7 @@ namespace SpringEditor
         public bool FileTypeChecker(string path) //読み込まれたファイルの拡張子確認 (多分使わない関数だけど一応残しておく)
         {
             string[] allowArray = {"dat", "nbt"}; //許可拡張子列挙
-            foreach (var extend in allowArray)
+            foreach (string extend in allowArray)
             {
                 var dot = extend.Length;
                 if (extend == path.Substring(path.Length - dot, dot)) return true;
@@ -186,7 +186,7 @@ namespace SpringEditor
         public static TreeNode AddTag(TagBase tag, TreeNode node)
         {
             var addnode = new TreeNode();
-            var value = "";
+            string value = "";
 
             switch (tag.TagType)
             {
