@@ -1,4 +1,4 @@
-﻿namespace SpringEditor.NBT
+﻿namespace OragngeNBTEditor.NBT
 {
     internal class NBTReader
     {
