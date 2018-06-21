@@ -102,7 +102,6 @@ namespace OragngeNBTEditor.NBT
                 success = false;
             }
             
-
             return success;
         }
     }

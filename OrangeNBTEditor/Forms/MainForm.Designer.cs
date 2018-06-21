@@ -79,6 +79,7 @@
             this.チャンク検索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +108,7 @@
             this.toolStrip_AddTagDouble,
             this.toolStrip_AddTagByteArray,
             this.toolStrip_AddTagIntArray,
+            this.toolStripButton1,
             this.toolStrip_AddTagString,
             this.toolStrip_AddTagList,
             this.toolStrip_AddTagCompound,
@@ -114,7 +116,7 @@
             this.toolStrip_FindNext});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(570, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(585, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -351,7 +353,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 52);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(570, 292);
+            this.treeView1.Size = new System.Drawing.Size(585, 303);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
@@ -368,11 +370,12 @@
             this.imageList1.Images.SetKeyName(3, "document-attribute-l.png");
             this.imageList1.Images.SetKeyName(4, "document-attribute-f.png");
             this.imageList1.Images.SetKeyName(5, "document-attribute-d.png");
-            this.imageList1.Images.SetKeyName(6, "edit-code.png");
+            this.imageList1.Images.SetKeyName(6, "edit-code-b.png");
             this.imageList1.Images.SetKeyName(7, "edit-code-i.png");
-            this.imageList1.Images.SetKeyName(8, "edit-small-caps.png");
-            this.imageList1.Images.SetKeyName(9, "edit-list.png");
-            this.imageList1.Images.SetKeyName(10, "box.png");
+            this.imageList1.Images.SetKeyName(8, "edit-code-l.png");
+            this.imageList1.Images.SetKeyName(9, "edit-small-caps.png");
+            this.imageList1.Images.SetKeyName(10, "edit-list.png");
+            this.imageList1.Images.SetKeyName(11, "box.png");
             // 
             // menuStrip1
             // 
@@ -383,7 +386,7 @@
             this.ヘルプHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(570, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(585, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -528,11 +531,20 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 343);
+            this.ClientSize = new System.Drawing.Size(585, 354);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
@@ -599,5 +611,6 @@
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
