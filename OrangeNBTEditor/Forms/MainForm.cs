@@ -318,10 +318,10 @@ namespace OrangeNBTEditor.Forms
             switch (tag.TagType)
             {
                 case TagType.Compound:
-                    index = 10;
+                    index = 11;
                     break;
                 case TagType.List:
-                    index = 9;
+                    index = 10;
                     break;
                 case TagType.Byte:
                     index = 0;
@@ -345,12 +345,13 @@ namespace OrangeNBTEditor.Forms
                     index = 3;
                     break;
                 case TagType.LongArray:
+                    index = 8;
                     break;
                 case TagType.Short:
                     index = 1;
                     break;
                 case TagType.String:
-                    index = 8;
+                    index = 9;
                     break;
             }
 
