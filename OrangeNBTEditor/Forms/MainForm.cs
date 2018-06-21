@@ -357,5 +357,10 @@ namespace OrangeNBTEditor.Forms
 
             return index;
         }
+
+        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
