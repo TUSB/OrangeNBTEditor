@@ -13,7 +13,7 @@ namespace OragngeNBTEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrangeNBTEditor.Forms.MainWindow());
+            Application.Run(new OrangeNBTEditor.Forms.MainForm());
         }
     }
 }

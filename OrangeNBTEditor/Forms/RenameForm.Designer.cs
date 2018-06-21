@@ -1,6 +1,6 @@
 ﻿namespace OrangeNBTEditor.Forms
 {
-    partial class RenameWindow
+    partial class RenameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.textBox1.Size = new System.Drawing.Size(181, 19);
             this.textBox1.TabIndex = 3;
             // 
-            // RenameWindow
+            // RenameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,8 +82,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximumSize = new System.Drawing.Size(262, 113);
             this.MinimumSize = new System.Drawing.Size(262, 113);
-            this.Name = "RenameWindow";
+            this.Name = "RenameForm";
             this.Text = "名前変更";
+            this.Load += new System.EventHandler(this.RenameForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

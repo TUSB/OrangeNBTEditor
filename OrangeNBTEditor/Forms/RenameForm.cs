@@ -7,14 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OrangeNBT;
+using OrangeNBT.NBT;
+
 
 namespace OrangeNBTEditor.Forms
 {
-    public partial class RenameWindow : Form
+    public partial class RenameForm : Form
     {
-        public RenameWindow()
+        public TagBase NBT { set; get; }
+
+        public RenameForm()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// フォームロードイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RenameForm_Load(object sender, EventArgs e)
+        {
+            if (NBT != null)
+            {
+                textBox1.Text = NBT.Name;
+            }
         }
 
         /// <summary>
@@ -24,6 +42,7 @@ namespace OrangeNBTEditor.Forms
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            NBT.Rename(textBox1.Text);
             this.DialogResult = DialogResult.OK;
         }
 
@@ -36,7 +55,5 @@ namespace OrangeNBTEditor.Forms
         {
             this.Close();
         }
-
-        
     }
 }

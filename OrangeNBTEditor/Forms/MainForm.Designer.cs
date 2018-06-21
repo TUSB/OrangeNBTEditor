@@ -1,6 +1,6 @@
 ﻿namespace OrangeNBTEditor.Forms
 {
-    partial class MainWindow
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.OpenFilesSB = new System.Windows.Forms.ToolStripButton();
-            this.CutSB = new System.Windows.Forms.ToolStripButton();
-            this.CopySB = new System.Windows.Forms.ToolStripButton();
-            this.PasteSB = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_OpenFile = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_OpenDirectory = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Save = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Update = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.RenameTagSB = new System.Windows.Forms.ToolStripButton();
-            this.EditTagValueSB = new System.Windows.Forms.ToolStripButton();
-            this.DeleteTagSB = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Cut = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Copy = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Paste = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddByteTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddStringTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddIntTagSB = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Rename = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_ValueEdit = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_Remove = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.AddLongTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddFloatTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddDoubleTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddByteArraySB = new System.Windows.Forms.ToolStripButton();
-            this.AddIntArraySB = new System.Windows.Forms.ToolStripButton();
-            this.AddLongArraySB = new System.Windows.Forms.ToolStripButton();
-            this.AddStringArraySB = new System.Windows.Forms.ToolStripButton();
-            this.AddListTagSB = new System.Windows.Forms.ToolStripButton();
-            this.AddCompoundTagSB = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagByte = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagShort = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagInt = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagLong = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagFloat = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagDouble = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagByteArray = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagIntArray = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagString = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagList = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_AddTagCompound = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.FindNextSB = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip_FindNext = new System.Windows.Forms.ToolStripButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -86,258 +86,259 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenFilesSB,
-            this.CutSB,
-            this.CopySB,
-            this.PasteSB,
+            this.toolStrip_OpenFile,
+            this.toolStrip_OpenDirectory,
+            this.toolStrip_Save,
+            this.toolStrip_Update,
             this.toolStripSeparator2,
-            this.RenameTagSB,
-            this.EditTagValueSB,
-            this.DeleteTagSB,
+            this.toolStrip_Cut,
+            this.toolStrip_Copy,
+            this.toolStrip_Paste,
             this.toolStripSeparator3,
-            this.AddByteTagSB,
-            this.AddStringTagSB,
-            this.AddIntTagSB,
+            this.toolStrip_Rename,
+            this.toolStrip_ValueEdit,
+            this.toolStrip_Remove,
             this.toolStripSeparator1,
-            this.AddLongTagSB,
-            this.AddFloatTagSB,
-            this.AddDoubleTagSB,
-            this.AddByteArraySB,
-            this.AddIntArraySB,
-            this.AddLongArraySB,
-            this.AddStringArraySB,
-            this.AddListTagSB,
-            this.AddCompoundTagSB,
-            this.toolStripButton1,
-            this.toolStripButton2,
+            this.toolStrip_AddTagByte,
+            this.toolStrip_AddTagShort,
+            this.toolStrip_AddTagInt,
+            this.toolStrip_AddTagLong,
+            this.toolStrip_AddTagFloat,
+            this.toolStrip_AddTagDouble,
+            this.toolStrip_AddTagByteArray,
+            this.toolStrip_AddTagIntArray,
+            this.toolStrip_AddTagString,
+            this.toolStrip_AddTagList,
+            this.toolStrip_AddTagCompound,
             this.toolStripSeparator4,
-            this.FindNextSB});
+            this.toolStrip_FindNext});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(570, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // OpenFilesSB
+            // toolStrip_OpenFile
             // 
-            this.OpenFilesSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenFilesSB.Image = ((System.Drawing.Image)(resources.GetObject("OpenFilesSB.Image")));
-            this.OpenFilesSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.OpenFilesSB.Name = "OpenFilesSB";
-            this.OpenFilesSB.Size = new System.Drawing.Size(23, 22);
-            this.OpenFilesSB.Text = "開く";
-            this.OpenFilesSB.Click += new System.EventHandler(this.OpenFilesSB_Click);
+            this.toolStrip_OpenFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_OpenFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_OpenFile.Image")));
+            this.toolStrip_OpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_OpenFile.Name = "toolStrip_OpenFile";
+            this.toolStrip_OpenFile.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_OpenFile.Text = "ファイルを開く";
+            this.toolStrip_OpenFile.Click += new System.EventHandler(this.OpenFilesSB_Click);
             // 
-            // CutSB
+            // toolStrip_OpenDirectory
             // 
-            this.CutSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CutSB.Image = ((System.Drawing.Image)(resources.GetObject("CutSB.Image")));
-            this.CutSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CutSB.Name = "CutSB";
-            this.CutSB.Size = new System.Drawing.Size(23, 22);
-            this.CutSB.Text = "カット";
+            this.toolStrip_OpenDirectory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_OpenDirectory.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_OpenDirectory.Image")));
+            this.toolStrip_OpenDirectory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_OpenDirectory.Name = "toolStrip_OpenDirectory";
+            this.toolStrip_OpenDirectory.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_OpenDirectory.Text = "フォルダを開く";
             // 
-            // CopySB
+            // toolStrip_Save
             // 
-            this.CopySB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CopySB.Image = ((System.Drawing.Image)(resources.GetObject("CopySB.Image")));
-            this.CopySB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CopySB.Name = "CopySB";
-            this.CopySB.Size = new System.Drawing.Size(23, 22);
-            this.CopySB.Text = "コピー";
+            this.toolStrip_Save.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Save.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Save.Image")));
+            this.toolStrip_Save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Save.Name = "toolStrip_Save";
+            this.toolStrip_Save.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Save.Text = "保存";
+            this.toolStrip_Save.Click += new System.EventHandler(this.toolStrip_Save_Click);
             // 
-            // PasteSB
+            // toolStrip_Update
             // 
-            this.PasteSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.PasteSB.Image = ((System.Drawing.Image)(resources.GetObject("PasteSB.Image")));
-            this.PasteSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PasteSB.Name = "PasteSB";
-            this.PasteSB.Size = new System.Drawing.Size(23, 22);
-            this.PasteSB.Text = "ペースト";
+            this.toolStrip_Update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Update.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Update.Image")));
+            this.toolStrip_Update.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Update.Name = "toolStrip_Update";
+            this.toolStrip_Update.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Update.Text = "更新";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // RenameTagSB
+            // toolStrip_Cut
             // 
-            this.RenameTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.RenameTagSB.Image = ((System.Drawing.Image)(resources.GetObject("RenameTagSB.Image")));
-            this.RenameTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RenameTagSB.Name = "RenameTagSB";
-            this.RenameTagSB.Size = new System.Drawing.Size(23, 22);
-            this.RenameTagSB.Text = "Rename Tag";
+            this.toolStrip_Cut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Cut.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Cut.Image")));
+            this.toolStrip_Cut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Cut.Name = "toolStrip_Cut";
+            this.toolStrip_Cut.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Cut.Text = "カット";
             // 
-            // EditTagValueSB
+            // toolStrip_Copy
             // 
-            this.EditTagValueSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.EditTagValueSB.Image = ((System.Drawing.Image)(resources.GetObject("EditTagValueSB.Image")));
-            this.EditTagValueSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditTagValueSB.Name = "EditTagValueSB";
-            this.EditTagValueSB.Size = new System.Drawing.Size(23, 22);
-            this.EditTagValueSB.Text = "Edit Tag Value";
+            this.toolStrip_Copy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Copy.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Copy.Image")));
+            this.toolStrip_Copy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Copy.Name = "toolStrip_Copy";
+            this.toolStrip_Copy.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Copy.Text = "コピー";
             // 
-            // DeleteTagSB
+            // toolStrip_Paste
             // 
-            this.DeleteTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DeleteTagSB.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTagSB.Image")));
-            this.DeleteTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DeleteTagSB.Name = "DeleteTagSB";
-            this.DeleteTagSB.Size = new System.Drawing.Size(23, 22);
-            this.DeleteTagSB.Text = "Delete Tag";
+            this.toolStrip_Paste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Paste.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Paste.Image")));
+            this.toolStrip_Paste.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Paste.Name = "toolStrip_Paste";
+            this.toolStrip_Paste.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Paste.Text = "ペースト";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // AddByteTagSB
+            // toolStrip_Rename
             // 
-            this.AddByteTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddByteTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddByteTagSB.Image")));
-            this.AddByteTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddByteTagSB.Name = "AddByteTagSB";
-            this.AddByteTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddByteTagSB.Text = "Add Byte Tag";
-            this.AddByteTagSB.Click += new System.EventHandler(this.AddByteTagSB_Click);
+            this.toolStrip_Rename.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Rename.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Rename.Image")));
+            this.toolStrip_Rename.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Rename.Name = "toolStrip_Rename";
+            this.toolStrip_Rename.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Rename.Text = "名前を変更";
+            this.toolStrip_Rename.Click += new System.EventHandler(this.AddByteTagSB_Click);
             // 
-            // AddStringTagSB
+            // toolStrip_ValueEdit
             // 
-            this.AddStringTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddStringTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddStringTagSB.Image")));
-            this.AddStringTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddStringTagSB.Name = "AddStringTagSB";
-            this.AddStringTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddStringTagSB.Text = "Add Short Tag";
-            this.AddStringTagSB.Click += new System.EventHandler(this.AddStringTagSB_Click_1);
+            this.toolStrip_ValueEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_ValueEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_ValueEdit.Image")));
+            this.toolStrip_ValueEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_ValueEdit.Name = "toolStrip_ValueEdit";
+            this.toolStrip_ValueEdit.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_ValueEdit.Text = "値を変更";
+            this.toolStrip_ValueEdit.Click += new System.EventHandler(this.toolStrip_ValueEdit_Click);
             // 
-            // AddIntTagSB
+            // toolStrip_Remove
             // 
-            this.AddIntTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddIntTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddIntTagSB.Image")));
-            this.AddIntTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddIntTagSB.Name = "AddIntTagSB";
-            this.AddIntTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddIntTagSB.Text = "Add Int Tag";
+            this.toolStrip_Remove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_Remove.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_Remove.Image")));
+            this.toolStrip_Remove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_Remove.Name = "toolStrip_Remove";
+            this.toolStrip_Remove.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_Remove.Text = "削除";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // AddLongTagSB
+            // toolStrip_AddTagByte
             // 
-            this.AddLongTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddLongTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddLongTagSB.Image")));
-            this.AddLongTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddLongTagSB.Name = "AddLongTagSB";
-            this.AddLongTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddLongTagSB.Text = "Add Long Tag";
+            this.toolStrip_AddTagByte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagByte.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagByte.Image")));
+            this.toolStrip_AddTagByte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagByte.Name = "toolStrip_AddTagByte";
+            this.toolStrip_AddTagByte.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagByte.Text = "Byte Tagを追加";
             // 
-            // AddFloatTagSB
+            // toolStrip_AddTagShort
             // 
-            this.AddFloatTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddFloatTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddFloatTagSB.Image")));
-            this.AddFloatTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddFloatTagSB.Name = "AddFloatTagSB";
-            this.AddFloatTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddFloatTagSB.Text = "Add Float Tag";
+            this.toolStrip_AddTagShort.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagShort.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagShort.Image")));
+            this.toolStrip_AddTagShort.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagShort.Name = "toolStrip_AddTagShort";
+            this.toolStrip_AddTagShort.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagShort.Text = "Short Tagを追加";
             // 
-            // AddDoubleTagSB
+            // toolStrip_AddTagInt
             // 
-            this.AddDoubleTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddDoubleTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddDoubleTagSB.Image")));
-            this.AddDoubleTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddDoubleTagSB.Name = "AddDoubleTagSB";
-            this.AddDoubleTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddDoubleTagSB.Text = "Add Double Tag";
+            this.toolStrip_AddTagInt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagInt.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagInt.Image")));
+            this.toolStrip_AddTagInt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagInt.Name = "toolStrip_AddTagInt";
+            this.toolStrip_AddTagInt.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagInt.Text = "Int Tagを追加";
             // 
-            // AddByteArraySB
+            // toolStrip_AddTagLong
             // 
-            this.AddByteArraySB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddByteArraySB.Image = ((System.Drawing.Image)(resources.GetObject("AddByteArraySB.Image")));
-            this.AddByteArraySB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddByteArraySB.Name = "AddByteArraySB";
-            this.AddByteArraySB.Size = new System.Drawing.Size(23, 22);
-            this.AddByteArraySB.Text = "Add Byte Array Tag";
+            this.toolStrip_AddTagLong.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagLong.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagLong.Image")));
+            this.toolStrip_AddTagLong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagLong.Name = "toolStrip_AddTagLong";
+            this.toolStrip_AddTagLong.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagLong.Text = "Long Tagを追加";
             // 
-            // AddIntArraySB
+            // toolStrip_AddTagFloat
             // 
-            this.AddIntArraySB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddIntArraySB.Image = ((System.Drawing.Image)(resources.GetObject("AddIntArraySB.Image")));
-            this.AddIntArraySB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddIntArraySB.Name = "AddIntArraySB";
-            this.AddIntArraySB.Size = new System.Drawing.Size(23, 22);
-            this.AddIntArraySB.Text = "Add Int Array Tag";
+            this.toolStrip_AddTagFloat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagFloat.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagFloat.Image")));
+            this.toolStrip_AddTagFloat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagFloat.Name = "toolStrip_AddTagFloat";
+            this.toolStrip_AddTagFloat.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagFloat.Text = "Float Tagを追加";
             // 
-            // AddLongArraySB
+            // toolStrip_AddTagDouble
             // 
-            this.AddLongArraySB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddLongArraySB.Image = ((System.Drawing.Image)(resources.GetObject("AddLongArraySB.Image")));
-            this.AddLongArraySB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddLongArraySB.Name = "AddLongArraySB";
-            this.AddLongArraySB.Size = new System.Drawing.Size(23, 22);
-            this.AddLongArraySB.Text = "Add Long Array Tag";
+            this.toolStrip_AddTagDouble.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagDouble.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagDouble.Image")));
+            this.toolStrip_AddTagDouble.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagDouble.Name = "toolStrip_AddTagDouble";
+            this.toolStrip_AddTagDouble.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagDouble.Text = "Double Tagを追加";
             // 
-            // AddStringArraySB
+            // toolStrip_AddTagByteArray
             // 
-            this.AddStringArraySB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddStringArraySB.Image = ((System.Drawing.Image)(resources.GetObject("AddStringArraySB.Image")));
-            this.AddStringArraySB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddStringArraySB.Name = "AddStringArraySB";
-            this.AddStringArraySB.Size = new System.Drawing.Size(23, 22);
-            this.AddStringArraySB.Text = "Add String Array Tag";
+            this.toolStrip_AddTagByteArray.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagByteArray.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagByteArray.Image")));
+            this.toolStrip_AddTagByteArray.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagByteArray.Name = "toolStrip_AddTagByteArray";
+            this.toolStrip_AddTagByteArray.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagByteArray.Text = "ByteArray Tagを追加";
             // 
-            // AddListTagSB
+            // toolStrip_AddTagIntArray
             // 
-            this.AddListTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddListTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddListTagSB.Image")));
-            this.AddListTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddListTagSB.Name = "AddListTagSB";
-            this.AddListTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddListTagSB.Text = "Add List Tag";
+            this.toolStrip_AddTagIntArray.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagIntArray.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagIntArray.Image")));
+            this.toolStrip_AddTagIntArray.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagIntArray.Name = "toolStrip_AddTagIntArray";
+            this.toolStrip_AddTagIntArray.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagIntArray.Text = "IntArray Tagを追加";
             // 
-            // AddCompoundTagSB
+            // toolStrip_AddTagString
             // 
-            this.AddCompoundTagSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddCompoundTagSB.Image = ((System.Drawing.Image)(resources.GetObject("AddCompoundTagSB.Image")));
-            this.AddCompoundTagSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddCompoundTagSB.Name = "AddCompoundTagSB";
-            this.AddCompoundTagSB.Size = new System.Drawing.Size(23, 22);
-            this.AddCompoundTagSB.Text = "Add Compound Tag";
+            this.toolStrip_AddTagString.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagString.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagString.Image")));
+            this.toolStrip_AddTagString.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagString.Name = "toolStrip_AddTagString";
+            this.toolStrip_AddTagString.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagString.Text = "String Tagを追加";
             // 
-            // toolStripButton1
+            // toolStrip_AddTagList
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStrip_AddTagList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagList.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagList.Image")));
+            this.toolStrip_AddTagList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagList.Name = "toolStrip_AddTagList";
+            this.toolStrip_AddTagList.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagList.Text = "List Tagを追加";
             // 
-            // toolStripButton2
+            // toolStrip_AddTagCompound
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStrip_AddTagCompound.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_AddTagCompound.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_AddTagCompound.Image")));
+            this.toolStrip_AddTagCompound.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_AddTagCompound.Name = "toolStrip_AddTagCompound";
+            this.toolStrip_AddTagCompound.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_AddTagCompound.Text = "Compound Tagを追加";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // FindNextSB
+            // toolStrip_FindNext
             // 
-            this.FindNextSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.FindNextSB.Image = ((System.Drawing.Image)(resources.GetObject("FindNextSB.Image")));
-            this.FindNextSB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.FindNextSB.Name = "FindNextSB";
-            this.FindNextSB.Size = new System.Drawing.Size(23, 22);
-            this.FindNextSB.Text = "Find / Find Next";
+            this.toolStrip_FindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStrip_FindNext.Image = ((System.Drawing.Image)(resources.GetObject("toolStrip_FindNext.Image")));
+            this.toolStrip_FindNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStrip_FindNext.Name = "toolStrip_FindNext";
+            this.toolStrip_FindNext.Size = new System.Drawing.Size(23, 22);
+            this.toolStrip_FindNext.Text = "検索 / 次を検索";
             // 
             // treeView1
             // 
@@ -527,7 +528,7 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // MainWindow
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -535,8 +536,8 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "MainWindow";
-            this.Text = "Main";
+            this.Name = "MainForm";
+            this.Text = "OrangeNBTEditor";
             this.Load += new System.EventHandler(this.Main_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -550,32 +551,32 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton OpenFilesSB;
-        private System.Windows.Forms.ToolStripButton CutSB;
-        private System.Windows.Forms.ToolStripButton CopySB;
-        private System.Windows.Forms.ToolStripButton PasteSB;
+        private System.Windows.Forms.ToolStripButton toolStrip_OpenFile;
+        private System.Windows.Forms.ToolStripButton toolStrip_OpenDirectory;
+        private System.Windows.Forms.ToolStripButton toolStrip_Save;
+        private System.Windows.Forms.ToolStripButton toolStrip_Update;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton RenameTagSB;
-        private System.Windows.Forms.ToolStripButton EditTagValueSB;
-        private System.Windows.Forms.ToolStripButton DeleteTagSB;
+        private System.Windows.Forms.ToolStripButton toolStrip_Cut;
+        private System.Windows.Forms.ToolStripButton toolStrip_Copy;
+        private System.Windows.Forms.ToolStripButton toolStrip_Paste;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton AddByteTagSB;
-        private System.Windows.Forms.ToolStripButton AddStringTagSB;
-        private System.Windows.Forms.ToolStripButton AddIntTagSB;
+        private System.Windows.Forms.ToolStripButton toolStrip_Rename;
+        private System.Windows.Forms.ToolStripButton toolStrip_ValueEdit;
+        private System.Windows.Forms.ToolStripButton toolStrip_Remove;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton AddLongTagSB;
-        private System.Windows.Forms.ToolStripButton AddFloatTagSB;
-        private System.Windows.Forms.ToolStripButton AddDoubleTagSB;
-        private System.Windows.Forms.ToolStripButton AddByteArraySB;
-        private System.Windows.Forms.ToolStripButton AddIntArraySB;
-        private System.Windows.Forms.ToolStripButton AddLongArraySB;
-        private System.Windows.Forms.ToolStripButton AddStringArraySB;
-        private System.Windows.Forms.ToolStripButton AddListTagSB;
-        private System.Windows.Forms.ToolStripButton AddCompoundTagSB;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagByte;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagShort;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagInt;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagLong;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagFloat;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagDouble;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagByteArray;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagIntArray;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagString;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagList;
+        private System.Windows.Forms.ToolStripButton toolStrip_AddTagCompound;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton FindNextSB;
+        private System.Windows.Forms.ToolStripButton toolStrip_FindNext;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ファイルFToolStripMenuItem;
