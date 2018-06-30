@@ -171,6 +171,126 @@ namespace OrangeNBTEditor.Forms
         }
 
         /// <summary>
+        /// TagByteボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagByte_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagShortボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagShort_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagIntボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagInt_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagLongボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagLong_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagFloatボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagFloat_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagDoubleボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagDouble_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagByteArrayボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagByteArray_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagIntArrayボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagIntArray_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagLongARrayボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagStringボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagString_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagKListボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagList_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
+        /// TagCompoundボタンクリックイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStrip_AddTagCompound_Click(object sender, EventArgs e)
+        {
+            AddTag((TagBase)treeView1.SelectedNode.Tag);
+        }
+
+        /// <summary>
         /// NBTファイルを開く
         /// </summary>
         /// <param name="filePath"></param>
@@ -358,9 +478,57 @@ namespace OrangeNBTEditor.Forms
             return index;
         }
 
+        /// <summary>
+        /// タグ追加のFormを呼び出し、追加します
+        /// </summary>
+        /// <param name="selectedNodeType">TagBase</param>
+        /// <returns></returns>
+        public void AddTag(TagBase selectedNodeType)
+        {
+            var CreateTag = new OrangeNBTEditor.Forms.AddTagByte();
+            CreateTag.NodeName = selectedNodeType;
+            if (selectedNodeType.TagType == TagType.Compound)
+            {
+                //処理
+                return;
+            }
+
+            if (CreateTag.ShowDialog() == DialogResult.OK)
+            {
+                switch (CreateTag.NodeName.TagType)
+                {
+                    case TagType.ByteArray:
+                        break;
+                    case TagType.IntArray:
+                        break;
+                    case TagType.LongArray:
+                        break;
+                    case TagType.Byte:
+                        break;
+                    case TagType.Short:
+                        break;
+                    case TagType.Int:
+                        break;
+                    case TagType.Long:
+                        break;
+                    case TagType.Float:
+                        break;
+                    case TagType.Double:
+                        break;
+                    case TagType.String:
+                        break;
+                    case TagType.List:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }
