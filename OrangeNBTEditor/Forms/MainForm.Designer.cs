@@ -164,6 +164,7 @@
             this.toolStrip_Update.Name = "toolStrip_Update";
             this.toolStrip_Update.Size = new System.Drawing.Size(23, 22);
             this.toolStrip_Update.Text = "更新";
+            this.toolStrip_Update.Click += new System.EventHandler(this.toolStrip_Update_Click);
             // 
             // toolStripSeparator2
             // 
@@ -504,47 +505,47 @@
             // 
             this.カットToolStripMenuItem.Name = "カットToolStripMenuItem";
             this.カットToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.カットToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.カットToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.カットToolStripMenuItem.Text = "カット";
             // 
             // コピーToolStripMenuItem
             // 
             this.コピーToolStripMenuItem.Name = "コピーToolStripMenuItem";
             this.コピーToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.コピーToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.コピーToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.コピーToolStripMenuItem.Text = "コピー";
             // 
             // ペーストToolStripMenuItem
             // 
             this.ペーストToolStripMenuItem.Name = "ペーストToolStripMenuItem";
             this.ペーストToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.ペーストToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ペーストToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.ペーストToolStripMenuItem.Text = "ペースト";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(169, 6);
             // 
             // リネームToolStripMenuItem
             // 
             this.リネームToolStripMenuItem.Name = "リネームToolStripMenuItem";
             this.リネームToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.リネームToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.リネームToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.リネームToolStripMenuItem.Text = "名前の変更";
             // 
             // 値の編集ToolStripMenuItem
             // 
             this.値の編集ToolStripMenuItem.Name = "値の編集ToolStripMenuItem";
             this.値の編集ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.値の編集ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.値の編集ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.値の編集ToolStripMenuItem.Text = "値の変更";
             // 
             // 削除ToolStripMenuItem
             // 
             this.削除ToolStripMenuItem.Name = "削除ToolStripMenuItem";
             this.削除ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.削除ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.削除ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.削除ToolStripMenuItem.Text = "削除";
             // 
             // 検索ToolStripMenuItem
@@ -564,35 +565,35 @@
             // 
             this.検索ToolStripMenuItem1.Name = "検索ToolStripMenuItem1";
             this.検索ToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.検索ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.検索ToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.検索ToolStripMenuItem1.Text = "検索";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 22);
             this.toolStripMenuItem3.Text = "次を検索";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(134, 6);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(137, 22);
             this.toolStripMenuItem4.Text = "置換";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(134, 6);
             // 
             // チャンク検索ToolStripMenuItem
             // 
             this.チャンク検索ToolStripMenuItem.Name = "チャンク検索ToolStripMenuItem";
-            this.チャンク検索ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.チャンク検索ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.チャンク検索ToolStripMenuItem.Text = "チャンク検索";
             // 
             // ヘルプHToolStripMenuItem
@@ -607,7 +608,7 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // MainForm

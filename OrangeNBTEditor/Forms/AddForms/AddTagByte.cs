@@ -78,6 +78,10 @@ namespace OrangeNBTEditor.Forms
             this.DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// 必要データを格納しFormに返す
+        /// </summary>
+        /// <param name="tagType"></param>
         private void TagAdder(TagType tagType)
         {
             if ((textBox_Name.Text == null) || (textBox_Name.TextLength == 0))

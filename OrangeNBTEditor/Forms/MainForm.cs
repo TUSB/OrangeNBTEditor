@@ -487,10 +487,15 @@ namespace OrangeNBTEditor.Forms
         {
             var CreateTag = new OrangeNBTEditor.Forms.AddTagByte();
             CreateTag.NodeName = selectedNodeType;
-            if (selectedNodeType.TagType == TagType.Compound)
+            if (CreateTag.ShowDialog() == DialogResult.OK)
             {
-                //処理
-                return;
+                if (selectedNodeType.TagType == TagType.Compound)
+                {
+                    var tag = (TagCompound)treeView1.SelectedNode.Tag;
+                    tag.Add(new TagCompound(CreateTag.AddName));
+
+                    return;
+                }
             }
 
             if (CreateTag.ShowDialog() == DialogResult.OK)
@@ -530,5 +535,9 @@ namespace OrangeNBTEditor.Forms
 
         }
 
+        private void toolStrip_Update_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
